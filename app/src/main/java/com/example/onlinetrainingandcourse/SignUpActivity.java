@@ -48,6 +48,18 @@ public class SignUpActivity extends AppCompatActivity {
         login = findViewById(R.id.signupLogin);
 
 
+        //if press on login button..
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivity.this, LogInActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
