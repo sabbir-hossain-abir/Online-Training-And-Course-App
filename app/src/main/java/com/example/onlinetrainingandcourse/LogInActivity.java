@@ -27,13 +27,13 @@ public class LogInActivity extends AppCompatActivity {
         //stays logged in..
         //commented out because of testing purposes..later will be uncommented..
 
-//        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-//        String checkbox = preferences.getString("remember","");
-//        if (checkbox.equals("true")){
-//
-//            Intent intent = new Intent(LogInActivity.this,MainActivity.class);
-//            startActivity(intent);
-//        }
+        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+        String checkbox = preferences.getString("remember","");
+        if (checkbox.equals("true")){
+
+            Intent intent = new Intent(LogInActivity.this,Home.class);
+            startActivity(intent);
+        }
 
         email = findViewById(R.id.loginetEmail);
         password = findViewById(R.id.loginetPassword);
@@ -65,7 +65,7 @@ public class LogInActivity extends AppCompatActivity {
 
                 if (loginemail.equals(email) && loginpassword.equals(password)){
 
-                    Intent intent = new Intent(LogInActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LogInActivity.this, Home.class);
                     startActivity(intent);
                     finish();
 

@@ -27,16 +27,16 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
 
-        //stays logged in..
-        //commented out because of testing purposes..later will be uncommented..
+//        stays logged in..
+//        commented out because of testing purposes..later will be uncommented..
 
-//        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-//        String checkbox = preferences.getString("remember","");
-//        if (checkbox.equals("true")){
-//
-//            Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
-//            startActivity(intent);
-//        }
+        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+        String checkbox = preferences.getString("remember","");
+        if (checkbox.equals("true")){
+
+            Intent intent = new Intent(SignUpActivity.this,Home.class);
+            startActivity(intent);
+        }
 
         name = findViewById(R.id.signupetName);
         email = findViewById(R.id.signupetEmail);
