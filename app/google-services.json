@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "428568684512",
+    "project_id": "online-training-and-course-app",
+    "storage_bucket": "online-training-and-course-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428568684512:android:9277412d7148dc681fad85",
+        "android_client_info": {
+          "package_name": "com.example.onlinetrainingandcourse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF6PjS7N31JNVpOa1Z6Y7wdfvd8-QOG1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
