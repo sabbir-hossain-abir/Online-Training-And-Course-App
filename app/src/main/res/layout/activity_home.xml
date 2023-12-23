@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/footer" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/homeHomebtn"
         android:layout_width="51dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         app:srcCompat="@drawable/home" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/homeedubtn"
         android:layout_width="51dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/edu" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/homesrcbtn"
         android:layout_width="64dp"
         android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +58,7 @@
         app:srcCompat="@drawable/src" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/homesavebtn"
         android:layout_width="51dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,7 +70,7 @@
         app:srcCompat="@drawable/save" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/homeprofilebtn"
         android:layout_width="51dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,7 +82,7 @@
         app:srcCompat="@drawable/pro" />
 
     <TextView
-        android:id="@+id/textView"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Learn And Practice"
@@ -98,7 +98,7 @@
         app:layout_constraintVertical_bias="0.101" />
 
     <TextView
-        android:id="@+id/textView2"
+
         android:layout_width="376dp"
         android:layout_height="50dp"
         android:padding="3dp"
@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.174" />
 
     <TextView
-        android:id="@+id/textView3"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="3dp"
@@ -129,7 +129,7 @@
         app:layout_constraintVertical_bias="0.263" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/homeSeeAllbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="3dp"
@@ -164,6 +164,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/HomeAlltopicsbtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
@@ -172,7 +173,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/imageView1"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -183,7 +184,7 @@
                     >
 
                     <ImageView
-                        android:id="@+id/imageView13"
+
                         android:layout_width="40dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
@@ -200,7 +201,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView48"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -213,6 +214,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/homePopularbtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
@@ -221,7 +223,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/imageView15"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -233,7 +235,7 @@
                     >
 
                     <ImageView
-                        android:id="@+id/imageView134"
+
                         android:layout_width="40dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
@@ -247,7 +249,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView8"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -269,6 +271,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/homeNewestbtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
@@ -277,7 +280,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/imageView135"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -289,7 +292,7 @@
                     >
 
                     <ImageView
-                        android:id="@+id/imageView1334"
+
                         android:layout_width="40dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
@@ -303,7 +306,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView38"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -316,6 +319,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/homeAdvancebtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
@@ -324,7 +328,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/imageView1335"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -336,7 +340,7 @@
                     >
 
                     <ImageView
-                        android:id="@+id/imageView13343"
+
                         android:layout_width="37dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
@@ -350,7 +354,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView338"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
