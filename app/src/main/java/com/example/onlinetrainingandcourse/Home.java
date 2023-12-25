@@ -123,7 +123,22 @@ public class Home extends AppCompatActivity {
 
 
         //now we will pass this options variable to the adapter..
-        adapter = new HomeAdapter(options);
+//        adapter = new HomeAdapter(options);
+
+        adapter = new HomeAdapter(options, new HomeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(HomeModel model) {
+                // Handle item click here, e.g., start CodeDetailsActivity and pass data
+                Intent intent = new Intent(Home.this, CodeDetailsActivity.class);
+                intent.putExtra("coursename", model.getCoursename());
+                intent.putExtra("description", model.getDescription());
+                intent.putExtra("offerby", model.getOfferby());
+                intent.putExtra("videourl", model.getVideourl());
+                intent.putExtra("rating", model.getRating());
+                // Add any other data you want to pass to CodeDetailsActivity
+                startActivity(intent);
+            }
+        });
         horizontalRecyclerView.setAdapter(adapter);
     }
 

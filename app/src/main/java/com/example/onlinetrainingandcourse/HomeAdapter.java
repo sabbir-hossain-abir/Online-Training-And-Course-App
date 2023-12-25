@@ -16,9 +16,22 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 //public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.viewholder> {
 public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.viewholder> {
 
-    public HomeAdapter(@NonNull FirebaseRecyclerOptions<HomeModel> options) {
-        super(options);
+    private final OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(HomeModel model);
     }
+
+
+
+    public HomeAdapter(@NonNull FirebaseRecyclerOptions<HomeModel> options, OnItemClickListener listener) {
+        super(options);
+        this.listener = listener;
+    }
+
+//    public HomeAdapter(@NonNull FirebaseRecyclerOptions<HomeModel> options) {
+//        super(options);
+//    }
     @Override
     protected void onBindViewHolder(@NonNull viewholder holder, int position, @NonNull HomeModel model) {
 
@@ -31,11 +44,29 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.
         } else {
             holder.homeratings.setText("N/A");
         }
-        Glide.with(holder.homeImage.getContext()).load(model.getPicurl()).into(holder.homeImage);
+        if (model.getPicurl() != null) {
+            Glide.with(holder.homeImage.getContext()).load(model.getPicurl()).into(holder.homeImage);
+        } else {
+            // Optionally, you can set a placeholder or handle the case where the URL is null.
+            Glide.with(holder.homeImage.getContext()).load(R.drawable.ic_launcher_background).into(holder.homeImage);
+        }
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    listener.onItemClick(getItem(position));
+                }
+            }
+        });
 
 
 
     }
+
+
 
     @NonNull
     @Override
@@ -43,6 +74,8 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.home_card_row, parent, false);
         return new viewholder(view);
+
+
     }
 
 
@@ -67,11 +100,23 @@ public class HomeAdapter extends FirebaseRecyclerAdapter<HomeModel, HomeAdapter.
         ImageView homeImage;
         TextView homeTitle, homeofferby, homeratings;
          public viewholder(@NonNull View itemView) {
+
+
             super(itemView);
             homeImage = itemView.findViewById(R.id.homecardimage);
             homeTitle = itemView.findViewById(R.id.homecardcoursename);
             homeofferby = itemView.findViewById(R.id.homecardcourseoffer);
             homeratings = itemView.findViewById(R.id.homecardcourserating);
+
+             itemView.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     int position = getAdapterPosition();
+                     if (position != RecyclerView.NO_POSITION) {
+                         listener.onItemClick(getItem(position));
+                     }
+                 }
+             });
         }
     }
 }

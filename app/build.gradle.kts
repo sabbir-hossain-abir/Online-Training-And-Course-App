@@ -65,4 +65,6 @@ dependencies {
 //    implementation ("com.google.firebase:firebase-storage:22.0.0")
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0") // Use the same version
+
 }

@@ -2,18 +2,36 @@ package com.example.onlinetrainingandcourse;
 
 public class HomeModel {
 
-    String picurl, coursename, offerby;
+    String picurl, coursename, offerby, description, videourl;
     Float rating;
 
     HomeModel(){
 
     }
 
-public HomeModel(String picurl, String coursename, String offerby, Float rating) {
+public HomeModel(String picurl, String coursename, String offerby, Float rating, String description, String videourl) {
         this.picurl = picurl;
         this.coursename = coursename;
         this.offerby = offerby;
         this.rating = rating;
+        this.description = description;
+        this.videourl = videourl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setVideourl(String videourl) {
+        this.videourl = videourl;
+    }
+
+    public String getVideourl() {
+        return videourl;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setPicurl(String picurl) {
