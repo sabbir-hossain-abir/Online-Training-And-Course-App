@@ -11,12 +11,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Home extends AppCompatActivity {
 
     private RecyclerView horizontalRecyclerView;
     private LinearLayout HomeAlltopicsbtn, homePopularbtn, homeNewestbtn, homeAdvancebtn;
     private ImageView homefooterpannel, homeHomebtn, homeedubtn, homesrcbtn, homesavebtn, homeprofilebtn;
     private TextView homeSeeAllbtn;
+
+    HomeAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +50,9 @@ public class Home extends AppCompatActivity {
         horizontalRecyclerView.setLayoutManager(layoutManager);
 
         // Create and set an adapter for your RecyclerView
-        HomeAdapter homeAdapter = new HomeAdapter();
+//        HomeAdapter homeAdapter = new HomeAdapter();
 //        horizontalRecyclerView.setAdapter(adapter);
-        horizontalRecyclerView.setAdapter(homeAdapter);
+//        horizontalRecyclerView.setAdapter(homeAdapter);
 
 
         // when clicked on home button
@@ -106,7 +111,47 @@ public class Home extends AppCompatActivity {
         });
 
 
+        //card..got this code from firebase documentation..
+        //https://firebase.google.com/docs/database/android/read-and-write
+        //now whole firebase data has been fetched in the options variable..
 
+        FirebaseRecyclerOptions<HomeModel> options =
+                new FirebaseRecyclerOptions.Builder<HomeModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("homecard"), HomeModel.class)
+                        .build();
+
+
+
+        //now we will pass this options variable to the adapter..
+//        adapter = new HomeAdapter(options);
+
+        adapter = new HomeAdapter(options, new HomeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(HomeModel model) {
+                // Handle item click here, e.g., start CodeDetailsActivity and pass data
+                Intent intent = new Intent(Home.this, CodeDetailsActivity.class);
+                intent.putExtra("coursename", model.getCoursename());
+                intent.putExtra("description", model.getDescription());
+                intent.putExtra("offerby", model.getOfferby());
+                intent.putExtra("videourl", model.getVideourl());
+                intent.putExtra("rating", model.getRating());
+                // Add any other data you want to pass to CodeDetailsActivity
+                startActivity(intent);
+            }
+        });
+        horizontalRecyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
 
