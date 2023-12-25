@@ -109,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity {
                         Log.d("SharedPreferences", "Saved email: " + email.getText().toString());
                         Log.d("SharedPreferences", "Saved name: " + name.getText().toString());
 
-                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                        Intent intent = new Intent(SignUpActivity.this, Home.class);
                         startActivity(intent);
                         finish();
 

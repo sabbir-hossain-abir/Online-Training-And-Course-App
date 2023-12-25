@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CodeDetailsActivity">
 
+    <!-- Play Button -->
+
+    <!-- Pause Button -->
+
     <VideoView
         android:id="@+id/coursedetailvideoView"
         android:layout_width="match_parent"
         android:layout_height="253dp"
+        android:padding="5dp" />
 
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002" />
-
-    <Button
-        android:id="@+id/playButton1"
+    <ImageButton
+        android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Play"
-        app:layout_constraintBottom_toTopOf="@+id/pauseButton1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coursedetailvideoView"
-        app:layout_constraintVertical_bias="0.1" />
+        android:layout_alignBottom="@+id/coursedetailvideoView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="181dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="199dp"
+        android:layout_marginBottom="104dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_media_play" />
 
-    <Button
-        android:id="@+id/pauseButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        app:layout_constraintBottom_toTopOf="@+id/coursedetailsenrollbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playButton1"
-        app:layout_constraintVertical_bias="0.1" />
+    <ImageButton
+        android:id="@+id/pauseButton"
+        android:layout_width="122dp"
+        android:layout_height="119dp"
+
+        android:layout_alignBottom="@+id/coursedetailvideoView"
+        android:layout_marginBottom="134dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_media_pause"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/coursedetailname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_below="@+id/coursedetailvideoView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="271dp"
+        android:layout_marginBottom="426dp"
         android:text="Course Name"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -64,7 +69,14 @@
         android:id="@+id/coursedetailrating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_below="@+id/coursedetailvideoView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="329dp"
+        android:layout_marginBottom="357dp"
         android:text="Ratings"
         android:textColor="@color/black"
         android:textSize="13sp"
@@ -80,7 +92,14 @@
         android:id="@+id/coursedetailoffrby"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_below="@+id/coursedetailvideoView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="322dp"
+        android:layout_marginBottom="391dp"
         android:text="Offer By"
         android:textColor="@color/black"
         android:textSize="15sp"
@@ -96,10 +115,17 @@
         android:id="@+id/coursedetailsdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/coursedetailvideoView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginEnd="304dp"
+        android:layout_marginBottom="317dp"
         android:text="Description"
         android:textColor="@color/black"
         android:textSize="14sp"
-        android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
@@ -111,13 +137,18 @@
         android:id="@+id/coursedetailsenrollbtn"
         android:layout_width="314dp"
         android:layout_height="45dp"
-        android:layout_marginTop="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="201dp"
         android:text="Enroll Now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintTop_toBottomOf="@+id/coursedetailsdescription"
+        app:layout_constraintVertical_bias="0.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

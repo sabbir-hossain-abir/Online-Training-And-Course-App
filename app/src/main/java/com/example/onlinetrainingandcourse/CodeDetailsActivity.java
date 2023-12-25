@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -35,6 +36,8 @@ public class CodeDetailsActivity extends AppCompatActivity {
         courseOfferByTextView = findViewById(R.id.coursedetailoffrby);
         courseDescriptionTextView = findViewById(R.id.coursedetailsdescription);
         enrollButton = findViewById(R.id.coursedetailsenrollbtn);
+        ImageButton playButton = findViewById(R.id.playButton);
+        ImageButton pauseButton = findViewById(R.id.pauseButton);
 
 
         Intent intent = getIntent();
