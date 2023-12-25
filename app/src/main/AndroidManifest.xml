@@ -16,23 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineTrainingAndCourse"
         tools:targetApi="31">
-<!--        <activity-->
-
-<!--            android:name=".AllTopics"-->
-<!--             android:exported="false" />-->
         <activity
-
-            android:name=".SubscriptionActivity"
+            android:name=".Advanace"
             android:exported="false" />
         <activity
-            android:name=".CodeDetailsActivity"
+            android:name=".Newest"
             android:exported="false" />
         <activity
-            android:name=".UserEditActivity"
+            android:name=".Popular"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
-
+            android:name=".AllTopics"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
@@ -42,6 +36,9 @@
             android:exported="false" />
         <activity
             android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CodeDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".EducationActivity"
@@ -70,7 +67,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -79,7 +76,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

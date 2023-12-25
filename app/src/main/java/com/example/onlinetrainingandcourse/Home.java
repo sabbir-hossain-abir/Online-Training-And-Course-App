@@ -110,13 +110,37 @@ public class Home extends AppCompatActivity {
             }
         });
 
-//        HomeAlltopicsbtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Home.this, AllTopics.class);
-//                startActivity(intent);
-//            }
-//        });
+        HomeAlltopicsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, AllTopics.class);
+                startActivity(intent);
+            }
+        });
+
+        homePopularbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,Popular.class);
+                startActivity(intent);
+            }
+        });
+
+        homeNewestbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this,Newest.class);
+                startActivity(intent);
+            }
+        });
+
+        homeAdvancebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Advanace.class);
+                startActivity(intent);
+            }
+        });
 
 
         //card..got this code from firebase documentation..
