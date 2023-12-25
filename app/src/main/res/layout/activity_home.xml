@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/home" />
+        app:srcCompat="@drawable/icon_home" />
 
     <ImageView
         android:id="@+id/homeedubtn"
@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/edu" />
+        app:srcCompat="@drawable/icon_carrier" />
 
     <ImageView
         android:id="@+id/homesrcbtn"
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/src" />
+        app:srcCompat="@drawable/icon_search" />
 
     <ImageView
         android:id="@+id/homesavebtn"
@@ -67,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/save" />
+        app:srcCompat="@drawable/icon_bookmark" />
 
     <ImageView
         android:id="@+id/homeprofilebtn"
@@ -79,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/pro" />
+        app:srcCompat="@drawable/icon_profile" />
 
     <TextView
 
