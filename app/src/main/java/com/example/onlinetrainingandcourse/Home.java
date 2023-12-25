@@ -110,13 +110,13 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        HomeAlltopicsbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, AllTopics.class);
-                startActivity(intent);
-            }
-        });
+//        HomeAlltopicsbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Home.this, AllTopics.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         //card..got this code from firebase documentation..
