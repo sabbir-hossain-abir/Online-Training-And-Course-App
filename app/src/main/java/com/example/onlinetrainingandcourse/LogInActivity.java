@@ -27,7 +27,7 @@ public class LogInActivity extends AppCompatActivity {
         //stays logged in..
         //commented out because of testing purposes..later will be uncommented..
 
-        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("checkbox2", MODE_PRIVATE);
         String checkbox = preferences.getString("remember","");
         if (checkbox.equals("true")){
 
@@ -52,44 +52,94 @@ public class LogInActivity extends AppCompatActivity {
             }
         });
 
+//        loginbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//               String loginemail= email.getText().toString().trim();
+//               String loginpassword = password.getText().toString().trim();
+//
+//                SharedPreferences preferences = getSharedPreferences("localPref", MODE_PRIVATE);
+//                String email = preferences.getString("email", "");
+//                String password = preferences.getString("password", "");
+//
+//                if (loginemail.equals(email) && loginpassword.equals(password)){
+//
+//                    Intent intent = new Intent(LogInActivity.this, Home.class);
+//                    startActivity(intent);
+//                    finish();
+//
+//                    //stays logged in..
+//
+//                    if (remme.isChecked()){
+//                        SharedPreferences preferenceschk = getSharedPreferences("checkbox2", MODE_PRIVATE);
+//                        SharedPreferences.Editor editor = preferences.edit();
+//                        editor.putString("remember", "true");
+//                        editor.apply();
+//                    } else if (!remme.isChecked()) {
+//
+//                        SharedPreferences preferenceschk = getSharedPreferences("checkbox2", MODE_PRIVATE);
+//                        SharedPreferences.Editor editor = preferences.edit();
+//                        editor.putString("remember", "false");
+//                        editor.apply();
+//                    }
+//
+//
+//
+//                }else {
+//                    Toast.makeText(LogInActivity.this, "Please Enter Right email or password", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               String loginemail= email.getText().toString().trim();
-               String loginpassword = password.getText().toString().trim();
+                String loginemail = email.getText().toString().trim();
+                String loginpassword = password.getText().toString().trim();
 
-                SharedPreferences preferences = getSharedPreferences("localPref", MODE_PRIVATE);
-                String email = preferences.getString("email", "");
-                String password = preferences.getString("password", "");
+                if (isValidInput(loginemail, loginpassword)) {
+                    SharedPreferences preferences = getSharedPreferences("localPref", MODE_PRIVATE);
+                    String storedEmail = preferences.getString("email", "");
+                    String storedPassword = preferences.getString("password", "");
 
-                if (loginemail.equals(email) && loginpassword.equals(password)){
+                    if (loginemail.equals(storedEmail) && loginpassword.equals(storedPassword)) {
 
-                    Intent intent = new Intent(LogInActivity.this, Home.class);
-                    startActivity(intent);
-                    finish();
+                        Intent intent = new Intent(LogInActivity.this, Home.class);
+                        startActivity(intent);
+                        finish();
 
-                    //stays logged in..
+                        // Stays logged in..
+                        if (remme.isChecked()) {
+                            SharedPreferences preferenceschk = getSharedPreferences("checkbox2", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferenceschk.edit();
+                            editor.putString("remember", "true");
+                            editor.apply();
+                        } else {
+                            SharedPreferences preferenceschk = getSharedPreferences("checkbox2", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferenceschk.edit();
+                            editor.putString("remember", "false");
+                            editor.apply();
+                        }
 
-                    if (remme.isChecked()){
-                        SharedPreferences preferenceschk = getSharedPreferences("checkbox", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("remember", "true");
-                        editor.apply();
-                    } else if (!remme.isChecked()) {
-
-                        SharedPreferences preferenceschk = getSharedPreferences("checkbox", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("remember", "false");
-                        editor.apply();
+                    } else {
+                        Toast.makeText(LogInActivity.this, "Please Enter the correct email or password", Toast.LENGTH_SHORT).show();
                     }
-
-
-
-                }else {
-                    Toast.makeText(LogInActivity.this, "Please Enter Right email or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
+    }
+
+    // Function to validate email and password
+    private boolean isValidInput(String email, String password) {
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(LogInActivity.this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        // You can add more sophisticated validation if needed
+        return true;
     }
 }
