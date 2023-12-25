@@ -17,13 +17,7 @@
         android:theme="@style/Theme.OnlineTrainingAndCourse"
         tools:targetApi="31">
         <activity
-            android:name=".CodeDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UserEditActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SettingsActivity"
+            android:name=".AllTopics"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
