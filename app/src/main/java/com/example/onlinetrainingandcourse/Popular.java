@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class AllTopics extends AppCompatActivity {
+public class Popular extends AppCompatActivity {
+
     private ImageView homefooterpannel, homeHomebtn, homeedubtn, homesrcbtn, homesavebtn, homeprofilebtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_topics);
+        setContentView(R.layout.activity_popular);
+
         homefooterpannel = findViewById(R.id.homefooterpannel);
         homeHomebtn = findViewById(R.id.homeHomebtn);
         homeedubtn = findViewById(R.id.homeedubtn);
@@ -23,7 +25,7 @@ public class AllTopics extends AppCompatActivity {
         homeHomebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AllTopics.this, Home.class);
+                Intent intent = new Intent(Popular.this, Home.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +33,7 @@ public class AllTopics extends AppCompatActivity {
         homeedubtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AllTopics.this, EducationActivity.class);
+                Intent intent = new Intent(Popular.this, EducationActivity.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +41,7 @@ public class AllTopics extends AppCompatActivity {
         homesavebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AllTopics.this, SaveActivity.class);
+                Intent intent = new Intent(Popular.this, SaveActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,10 +49,9 @@ public class AllTopics extends AppCompatActivity {
         homeprofilebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AllTopics.this, ProfileActivity.class);
+                Intent intent = new Intent(Popular.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }
