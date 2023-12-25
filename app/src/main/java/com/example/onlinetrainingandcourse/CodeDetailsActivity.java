@@ -41,17 +41,12 @@ public class CodeDetailsActivity extends AppCompatActivity {
         ImageButton playButton = findViewById(R.id.playButton);
         ImageButton pauseButton = findViewById(R.id.pauseButton);
 
-//        enrollButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(CodeDetailsActivity.this, SubscriptionActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-        enrollButton.setOnClickListener(v -> {
-            Intent intent = new Intent(CodeDetailsActivity.this, SubscriptionActivity.class);
-            startActivity(intent);
+        enrollButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CodeDetailsActivity.this, SubscriptionActivity.class);
+                startActivity(intent);
+            }
         });
 
 

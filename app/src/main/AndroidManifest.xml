@@ -19,8 +19,6 @@
         <activity
             android:name=".Advanace"
             android:exported="false" />
-        <activity android:name=".SubscriptionActivity"
-            android:exported="false"/>
         <activity
             android:name=".Newest"
             android:exported="false" />
@@ -45,14 +43,9 @@
         <activity
             android:name=".EducationActivity"
             android:exported="false" />
-        <activity android:name=".SettingsActivity"
-            android:exported="false"/>
-        <activity android:name=".UserEditActivity"
-            android:exported="false"/>
         <activity
             android:name=".SplashScreen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
