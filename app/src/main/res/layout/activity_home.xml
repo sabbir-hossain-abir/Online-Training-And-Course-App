@@ -373,9 +373,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRecycleView"
         android:layout_width="match_parent"
-        android:layout_height="187dp"
+        android:layout_height="208dp"
 
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="46dp"
         android:orientation="horizontal"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/homefooterpannel"
@@ -383,7 +383,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.797" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
